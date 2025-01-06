@@ -13,8 +13,6 @@ public class CalAssembler { // 객체 생성 + 주입
         calSub = new CalSub();
         calMul = new CalMul();
         calDiv = new CalDiv();
-
-        assemble();
     }
 
     public void assemble() { // 주입
