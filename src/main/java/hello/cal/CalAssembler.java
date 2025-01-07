@@ -7,12 +7,12 @@ public class CalAssembler { // 객체 생성 + 주입
     private final CalMul calMul;
     private final CalDiv calDiv;
 
-    public CalAssembler() { // 객체 생성
-        calculator = new MyCalculator();
-        calAdd = new CalAdd();
-        calSub = new CalSub();
-        calMul = new CalMul();
-        calDiv = new CalDiv();
+    public CalAssembler(MyCalculator calculator, CalAdd calAdd, CalSub calSub, CalMul calMul, CalDiv calDiv) { // 객체 생성
+        this.calculator = calculator;
+        this.calAdd = calAdd;
+        this.calSub = calSub;
+        this.calMul = calMul;
+        this.calDiv = calDiv;
     }
 
     public void assemble() { // 주입

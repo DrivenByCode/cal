@@ -5,6 +5,20 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="cCal" class="hello.cal.CalAssembler" />
+    <!--빈의 생성 및 관리 -->
+    <bean id="cAdd" class="hello.cal.CalAdd" />
+    <bean id="cSub" class="hello.cal.CalSub" />
+    <bean id="cMul" class="hello.cal.CalMul" />
+    <bean id="cDiv" class="hello.cal.CalDiv" />
 
+    <bean id="myCalculator" class="hello.cal.MyCalculator" />
+
+    <bean id="calAssembler" class="hello.cal.CalAssembler">
+        <!-- 생성자 주입시 의존성 전달 <bean> 태그 내부에서만 사용 가능 -->
+        <constructor-arg ref="myCalculator"/>
+        <constructor-arg ref="cAdd"/>
+        <constructor-arg ref="cSub"/>
+        <constructor-arg ref="cMul"/>
+        <constructor-arg ref="cDiv"/>
+    </bean>
 </beans>

@@ -12,7 +12,7 @@ public class CalApplication {
 
 		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationContext.xml");
 
-		CalAssembler calAssembler = ctx.getBean("cCal", CalAssembler.class);
+		CalAssembler calAssembler = ctx.getBean("calAssembler", CalAssembler.class);
 
 		calAssembler.assemble();
 
